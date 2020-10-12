@@ -1,0 +1,4 @@
+include ':commonLib'
+include ':basicLib'
+include ':app'
+rootProject.name = "MyFramework"
