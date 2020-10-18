@@ -1,18 +1,35 @@
 package com.cmj.basiclib.base
 
-class BaseActivity : BaseNoModelActivity() {
-    protected
+import android.os.Bundle
+import androidx.lifecycle.Observer
+import com.cmj.basiclib.lifecycle.BaseViewModel
 
+abstract class BaseActivity<VM : BaseViewModel> : BaseNoModelActivity() {
+    protected lateinit  var viewModel : VM
 
-    override fun onCreate(): Int {
-        TODO("Not yet implemented")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = initViewModel()
     }
 
-    override fun initView() {
-        TODO("Not yet implemented")
+    /**
+     * 初始化ViewModel
+     */
+    protected abstract fun initViewModel() : VM
+
+
+    private fun  initObserve(){
+        viewModel.getShowDialog(this , Observer {
+            if (it.isShow){
+                showDialog(it.msg)
+            }else{
+                dismissDialog()
+            }
+        })
     }
 
-    override fun initData() {
-        TODO("Not yet implemented")
-    }
+    /**
+     * ViewModel层发生了错误
+     */
+    protected abstract fun showError(obj: Any?)
 }

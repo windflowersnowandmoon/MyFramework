@@ -4,9 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cmj.basiclib.utils.ActivityUtil
+import com.cmj.basiclib.view.LoadingDialog
 
 abstract class BaseNoModelActivity : AppCompatActivity() {
     protected lateinit var context: Context
+    private  var loadingDialog : LoadingDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         context = this
@@ -32,6 +34,25 @@ abstract class BaseNoModelActivity : AppCompatActivity() {
      */
     protected abstract fun initData()
 
+    protected fun showDialog(msg : String){
+        if (loadingDialog != null && loadingDialog!!.isShowing){
+            loadingDialog!!.setLoadingMsg(msg)
+        }else {
+            loadingDialog = LoadingDialog(context)
+            loadingDialog!!.setLoadingMsg(msg)
+            loadingDialog!!.show()
+        }
+    }
+
+    /**
+     * 隐藏等待框
+     */
+    protected open fun dismissDialog() {
+        if (loadingDialog != null && loadingDialog!!.isShowing) {
+            loadingDialog!!.dismiss()
+            loadingDialog = null
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()
