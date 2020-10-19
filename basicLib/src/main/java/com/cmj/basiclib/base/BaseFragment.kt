@@ -35,6 +35,8 @@ open abstract class BaseFragment<VM : BaseViewModel> : BaseNoModelFragment(){
                 dismissDialog()
             }
         })
+        viewModel!!.getError(this,
+            Observer { obj -> showError(obj!!) })
     }
 
     /**

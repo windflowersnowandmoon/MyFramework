@@ -8,8 +8,9 @@ abstract class BaseActivity<VM : BaseViewModel> : BaseNoModelActivity() {
     protected lateinit  var viewModel : VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         viewModel = initViewModel()
+        initObserve()
+        super.onCreate(savedInstanceState)
     }
 
     /**
@@ -25,6 +26,9 @@ abstract class BaseActivity<VM : BaseViewModel> : BaseNoModelActivity() {
             }else{
                 dismissDialog()
             }
+        })
+        viewModel.getError(this , Observer {
+            showError(it)
         })
     }
 

@@ -8,7 +8,7 @@ import com.cmj.basiclib.bean.DialogBean
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-class BaseViewModel : ViewModel() {
+open class BaseViewModel : ViewModel() {
     /**
      * 管理 RxJava请求
      */
@@ -28,7 +28,7 @@ class BaseViewModel : ViewModel() {
      * 添加rxJava 发出的请求
      */
     protected fun addDisposable(disposable: Disposable) {
-        if (compositeDisposable == null || compositeDisposable!!.isDisposed) {
+            if (compositeDisposable == null || compositeDisposable!!.isDisposed) {
             compositeDisposable = CompositeDisposable()
         }
         compositeDisposable!!.add(disposable)
