@@ -8,7 +8,9 @@ public final class DialogLiveData<T> : MutableLiveData<T>() {
     private var bean: DialogBean = DialogBean()
 
     public fun setValue(isShow: Boolean) {
-
+        bean.isShow = isShow
+        bean.msg = ""
+        value = bean as T
     }
 
     public fun setValue(isShow: Boolean, msg: String) {
