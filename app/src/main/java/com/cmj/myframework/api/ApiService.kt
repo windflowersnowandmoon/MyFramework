@@ -1,5 +1,6 @@
 package com.cmj.myframework.api
 
+import com.cmj.myframework.ui.test.JueJinBean
 import com.cmj.myframework.ui.test.NewsBean
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -22,5 +23,5 @@ interface ApiService {
      */
     @GET("get_entry_by_timeline")
     fun jueJin(@Query("category") category : String , @Query("limit")  limit : String,
-               @Query("src") src : String )
+               @Query("src") src : String ) : Observable<JueJinBean>
 }
