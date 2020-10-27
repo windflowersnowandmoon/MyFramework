@@ -37,9 +37,9 @@ class Api : BaseApi() {
         //新建log拦截器
         val loggingInterceptor =
             HttpLoggingInterceptor(HttpLoggingInterceptor.Logger() {
-                fun log(message: String) {
-                    Log.d("zcb", "OkHttp====Message:$message")
-                }
+//                fun log(message: String) {
+                Log.d("zcb", "OkHttp====Message:$it")
+//                }
             })
         loggingInterceptor.level = level
         //OkHttp进行添加拦截器loggingInterceptor
@@ -49,6 +49,7 @@ class Api : BaseApi() {
             .writeTimeout(60, TimeUnit.SECONDS) //设置写超时
             .retryOnConnectionFailure(true) //是否自动重连
             .addInterceptor(loggingInterceptor)
+            /*.addNetworkInterceptor(loggingInterceptor)*/
             .build()
     }
 }

@@ -20,7 +20,8 @@ abstract class BaseApi {
         //支持RxJava
         builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         builder.baseUrl(baseUrl)
-        val client = OkHttpClient()
+//        val client = OkHttpClient()
+        val client = setClient()
         if (client != null) {
             builder.client(client)
         }
