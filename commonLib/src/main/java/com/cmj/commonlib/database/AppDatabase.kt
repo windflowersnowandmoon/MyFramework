@@ -8,7 +8,8 @@ import androidx.room.RoomDatabase
 @Database(entities = [Menses::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-//       abstract fun mensesdDao : Menses
+//    abstract fun mensesdDao : Menses
+
     companion object {
         private var instance: AppDatabase? = null
         fun getInstance(context: Context): AppDatabase {
