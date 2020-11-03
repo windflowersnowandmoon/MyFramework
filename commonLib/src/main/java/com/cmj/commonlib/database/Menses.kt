@@ -15,8 +15,6 @@ data class Menses(
     如果吧 @Ignore 不写到构造函数中，就不会提示错误了
      */
 
-    @PrimaryKey(autoGenerate = true) var id: Long,
-
     @ColumnInfo(name = "user_name") var userName: String?,
 
     @ColumnInfo(defaultValue = "china") var address: String?,
@@ -26,6 +24,9 @@ data class Menses(
 /*    @Ignore var sex: String? = null*/
 
 ) {
+
+    @PrimaryKey(autoGenerate = true) var id: Long = 0
+
 
     @Ignore
     var sex: String? = null

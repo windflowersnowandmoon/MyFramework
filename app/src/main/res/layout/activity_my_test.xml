@@ -19,6 +19,62 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="测试本地数据库" />
+        android:text="数据库插入对象" />
+
+    <Button
+        android:id="@+id/btn_test_db1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库插入集合" />
+
+    <Button
+        android:id="@+id/btn_test_db2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库查询对象" />
+
+    <Button
+        android:id="@+id/btn_test_db3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库查询集合" />
+
+    <Button
+        android:id="@+id/btn_test_db4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库更新对象" />
+
+    <Button
+        android:id="@+id/btn_test_db5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库更新集合" />
+
+    <Button
+        android:id="@+id/btn_test_db6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库删除对象" />
+
+    <Button
+        android:id="@+id/btn_test_db7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库删除集合" />
+
+    <Button
+        android:id="@+id/btn_test_db8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="数据库删除全部" />
 
 </LinearLayout>
