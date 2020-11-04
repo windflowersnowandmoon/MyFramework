@@ -26,6 +26,7 @@ class MyTestActivity : BaseActivity<MyTestViewModel>() {
         var sList: MutableList<Menses> = mutableListOf<Menses>()
 
         btn_request_data.setOnClickListener {
+
             viewModel.requstData()
         }
 
